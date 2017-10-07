@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyArchive.Application", "FamilyArchive.Application\FamilyArchive.Application.csproj", "{2EF69FA5-AF86-49EA-AD4F-780E70812022}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyArchive.Application", "FamilyArchive.Application\FamilyArchive.Application.csproj", "{2EF69FA5-AF86-49EA-AD4F-780E70812022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyArchive.Model", "FamilyArchive.Model\FamilyArchive.Model.csproj", "{3A49293B-6C4D-4CDC-A8ED-0E66759B39C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyArchive.Data", "FamilyArchive.Data\FamilyArchive.Data.csproj", "{C9EB2357-B9FD-420F-8A6B-D41725A7A0E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2EF69FA5-AF86-49EA-AD4F-780E70812022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EF69FA5-AF86-49EA-AD4F-780E70812022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EF69FA5-AF86-49EA-AD4F-780E70812022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A49293B-6C4D-4CDC-A8ED-0E66759B39C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A49293B-6C4D-4CDC-A8ED-0E66759B39C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A49293B-6C4D-4CDC-A8ED-0E66759B39C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A49293B-6C4D-4CDC-A8ED-0E66759B39C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EB2357-B9FD-420F-8A6B-D41725A7A0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EB2357-B9FD-420F-8A6B-D41725A7A0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EB2357-B9FD-420F-8A6B-D41725A7A0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EB2357-B9FD-420F-8A6B-D41725A7A0E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
