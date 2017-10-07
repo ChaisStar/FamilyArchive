@@ -1,4 +1,4 @@
-﻿namespace WebApplication1
+﻿namespace FamilyArchive.Application
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -18,7 +18,7 @@
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async context =>
+            app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
