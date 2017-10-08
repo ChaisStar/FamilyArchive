@@ -3,9 +3,12 @@ sudo: required
 dist: trusty  
 mono: none
 dotnet: 2.0.0
+env:
+  - CONNECTION_STRING
 before_script:
   - dotnet restore
   - chmod +x build.sh
+  - chmod +x before_deploy.sh
 script:  
   - ./build.sh --quiet verify
 notifications:
@@ -14,3 +17,13 @@ notifications:
       - chaisstar@outlook.com
     on_success: never
     on_failure: always
+before_deploy:
+  - sudo apt-get install jq
+  - sudo apt-get install moreutils
+  - ./before_deploy.sh $CONNECTION_STRING
+  #- git add -A
+deploy:
+  provider: azure_web_apps
+  skip_cleanup: true
+  on:
+    branch: develop

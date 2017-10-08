@@ -1,1 +1,1 @@
-dotnet restore && dotnet build
+dotnet build

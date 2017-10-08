@@ -19,4 +19,9 @@
     <ProjectReference Include="..\FamilyArchive.Service\FamilyArchive.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet">
+      <Version>1.0.0-*</Version>
+    </DotNetCliToolReference>
+  </ItemGroup>
 </Project>
