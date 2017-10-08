@@ -1,0 +1,16 @@
+language: csharp  
+sudo: required  
+dist: trusty  
+mono: none
+dotnet: 2.0.0
+before_script:
+  - dotnet restore
+  - chmod +x build.sh
+script:  
+  - ./build.sh --quiet verify
+notifications:
+  email:
+    recipients:
+      - chaisstar@outlook.com
+    on_success: never
+    on_failure: always
