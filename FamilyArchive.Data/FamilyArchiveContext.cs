@@ -1,7 +1,9 @@
 ﻿namespace FamilyArchive.Data
 {
+    using Extensions;
     using Microsoft.EntityFrameworkCore;
     using Model;
+    using ModelConfiguration;
 
     public class FamilyArchiveContext : DbContext
     {
@@ -15,7 +17,7 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.AddConfiguration<Phrase, PhraseConfiguration>();
             base.OnModelCreating(modelBuilder);
         }
     }

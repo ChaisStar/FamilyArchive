@@ -4,11 +4,23 @@
 
     public class FamilyArchiveOptionsBuilder : IFamilyArchiveOptionsBuilder
     {
-        public DbContextOptions<FamilyArchiveContext> Build(string connectionString)
+        private readonly string _connectionString;
+
+        public FamilyArchiveOptionsBuilder(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
+        public DbContextOptions<FamilyArchiveContext> Build()
         {
             var optionsBuilder = new DbContextOptionsBuilder<FamilyArchiveContext>();
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseNpgsql(_connectionString);
             return optionsBuilder.Options;
         }
+
+        //private static void OptionsAction(DbContextOptionsBuilder x, string connectionString)
+        //{
+        //    x.UseNpgsql();
+        //}
     }
 }

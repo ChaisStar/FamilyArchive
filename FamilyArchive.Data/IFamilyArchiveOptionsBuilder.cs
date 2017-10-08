@@ -4,6 +4,6 @@ namespace FamilyArchive.Data
 {
     public interface IFamilyArchiveOptionsBuilder
     {
-        DbContextOptions<FamilyArchiveContext> Build(string connectionString);
+        DbContextOptions<FamilyArchiveContext> Build();
     }
 }

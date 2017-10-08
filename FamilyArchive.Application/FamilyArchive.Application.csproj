@@ -10,6 +10,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FamilyArchive.Data\FamilyArchive.Data.csproj" />
+    <ProjectReference Include="..\FamilyArchive.Service\FamilyArchive.Service.csproj" />
   </ItemGroup>
 
 </Project>
