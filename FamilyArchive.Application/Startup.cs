@@ -20,17 +20,26 @@
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
+            const string dbPath = "AppSettings:Database:";
+            ApplicationSettings = new ApplicationSettings
+            {
+                Database = new Database(Configuration[$"{dbPath}Server"], Configuration[$"{dbPath}Port"],
+                    Configuration[$"{dbPath}Name"], Configuration[$"{dbPath}User"], Configuration[$"{dbPath}Password"])
+            };
         }
 
         private IConfigurationRoot Configuration { get; }
 
+        private ApplicationSettings ApplicationSettings { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddEntityFrameworkNpgsql().AddDbContext<FamilyArchiveContext>(x => x.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
+            services.AddEntityFrameworkNpgsql().AddDbContext<FamilyArchiveContext>(x => x.UseNpgsql(ApplicationSettings.Database.ConnectionString));
             services.AddScoped<IDbFactory, DbFactory>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPhraseRepository, PhraseRepository>();
             services.AddScoped<IPhraseService, PhraseService>();
+            services.AddScoped<ApplicationSettings>();
             services.AddMvc();
         }
 
@@ -45,7 +54,7 @@
 
             app.UseMvc();
 
-            app.Run(async (context) =>
+            app.Run(async context =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });

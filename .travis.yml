@@ -3,25 +3,23 @@ sudo: required
 dist: trusty  
 mono: none
 dotnet: 2.0.0
-env:
-  - CONNECTION_STRING
+python:
+  - "3.4"
 before_script:
   - dotnet restore
   - chmod +x build.sh
-  - chmod +x before_deploy.sh
 script:  
   - ./build.sh --quiet verify
 notifications:
   email:
     recipients:
-      - chaisstar@outlook.com
+      - $RECIPIENT
     on_success: never
     on_failure: always
 before_deploy:
-  - sudo apt-get install jq
-  - sudo apt-get install moreutils
-  - ./before_deploy.sh $CONNECTION_STRING
-  #- git add -A
+  - sudo apt-get update
+  - sudo apt-get install python3
+  - python3 before_deploy.py $DB_SERVER $DB_PORT $DB_NAME $DB_USER $DB_PASSWORD
 deploy:
   provider: azure_web_apps
   skip_cleanup: true
