@@ -53,6 +53,8 @@
             }
 
             app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.Run(async context =>
             {
