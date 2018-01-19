@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "es2015",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": [ "es2015", "dom" ],
+      "noImplicitAny": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "typeRoots": [
+        "node_modules/@types/"
+      ],
+      "alwaysStrict": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+  }

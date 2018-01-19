@@ -52,6 +52,8 @@
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseMvc();
 
             app.Run(async context =>
