@@ -20,9 +20,10 @@ before_deploy:
   - sudo apt-get update
   - sudo apt-get install python3
   - sudo apt-get install nodejs
+  - python3 before_deploy.py $DB_SERVER $DB_PORT $DB_NAME $DB_USER $DB_PASSWORD
+  - cd FamilyArchive.Application/
   - npm install
   - npm run build
-  - python3 before_deploy.py $DB_SERVER $DB_PORT $DB_NAME $DB_USER $DB_PASSWORD
 deploy:
   provider: azure_web_apps
   skip_cleanup: true
