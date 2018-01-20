@@ -1,16 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http'
+import { Component } from "@angular/core";
+import { Phrase, CreatePhraseDto } from "./Phrase";
+import { HttpService } from "./http.Service";
+
 @Component({
-   selector: 'app-root',
-   templateUrl: './app.component.html',
-   styleUrls: ['./app.component.css']
+    selector: "my-app",
+    templateUrl: "./app.component.html",
+    providers: [HttpService]
 })
-export class AppComponent implements OnInit {
-   constructor(private _httpService: Http) { }
-   apiValues: string[] = [];
-   ngOnInit() {
-      this._httpService.get('/api/values').subscribe(values => {
-         this.apiValues = values.json() as string[];
-      });
-   }
-}
+export class AppComponent {
+    phrases: Phrase[] = []
+
+    constructor(private httpService: HttpService) {
+        this.getData();
+        console.log(httpService.getData());
+    }
+
+    private getData = ():void =>{
+        this.httpService.getData().subscribe((data: Phrase[]) => this.phrases = data);
+    }
+
+    addItem = (): void => { 
+        this.httpService.postData(new CreatePhraseDto("1", "2", "3")).subscribe(() => this.getData); 
+    }
+};
