@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+      <Content Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+   </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FamilyArchive.Data\FamilyArchive.Data.csproj" />
     <ProjectReference Include="..\FamilyArchive.Service\FamilyArchive.Service.csproj" />
   </ItemGroup>
