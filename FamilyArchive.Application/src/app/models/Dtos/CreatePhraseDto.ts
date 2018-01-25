@@ -1,0 +1,3 @@
+export class CreatePhraseDto{
+    constructor (public from: string, public to: string, public text:string){}
+}

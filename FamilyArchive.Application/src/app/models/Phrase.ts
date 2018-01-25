@@ -6,7 +6,3 @@ export class Phrase {
     created: Date;
     updated: Date;
 }
-
-export class CreatePhraseDto{
-    constructor (public from: string, public to: string, public text:string){}
-}

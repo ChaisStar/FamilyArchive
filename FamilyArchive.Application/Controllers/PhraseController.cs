@@ -32,6 +32,7 @@
         }
 
         [HttpDelete]
+        [Route("{guid}")]
         public async Task<IActionResult> DeletePhraseAsync([FromRoute] Guid guid)
         {
             await _phraseService.DeletePhraseAsync(guid);
