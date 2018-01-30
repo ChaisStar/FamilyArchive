@@ -8,15 +8,11 @@ import { PhraseApiService } from "../../services/apiServices/phraseApiService";
     providers: [PhraseApiService]
 })
 export class AppComponent implements OnInit {
-    ngOnInit(): void {
-        this.getData();
-        console.log(this.phraseApiService.getPhrases());
-    }
-    phrases: Phrase[] = []
+    ngOnInit = (): Promise<void> => this.getData();
 
-    constructor(private phraseApiService: PhraseApiService) {
-        
-    }
+    phrases: Phrase[] = [];
+
+    constructor(private phraseApiService: PhraseApiService) { }
 
     private getData = async (): Promise<void> => {
         this.phrases = await this.phraseApiService.getPhrases();
