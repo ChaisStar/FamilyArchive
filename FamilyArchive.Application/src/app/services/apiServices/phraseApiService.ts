@@ -10,5 +10,5 @@ export class PhraseApiService {
     getPhrases = (): Promise<Phrase[]> => this.httpService.getDataAsync<Phrase[]>("api/phrase");
     addPhrase = (from: string, to: string, text: string): Promise<void> => 
         this.httpService.postDataAsync<CreatePhraseDto, void>("api/phrase", new CreatePhraseDto(from, to, text));
-    deletePhrase = (guid:string): Promise<void> => this.httpService.deleteDataAsync<void>(`api/phrase/${guid}`);
+    deletePhrase = (id:string): Promise<void> => this.httpService.deleteDataAsync<void>(`api/phrase/${id}`);
 }

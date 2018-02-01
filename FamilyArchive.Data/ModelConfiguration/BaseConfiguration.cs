@@ -9,8 +9,8 @@
         public void Configure(EntityTypeBuilder<T> entity)
         {
             entity.ToTable(TableName);
-            entity.HasKey(x => x.Guid);
-            entity.Property(x => x.Guid).ValueGeneratedOnAdd();
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.Id).ValueGeneratedOnAdd();
             entity.Property(x => x.Created).IsRequired();
             entity.Property(x => x.Updated).IsRequired();
             DetailConfiguration(entity);

@@ -11,9 +11,10 @@ using System;
 namespace FamilyArchive.Data.Migrations
 {
     [DbContext(typeof(FamilyArchiveContext))]
-    partial class FamilyArchiveContextModelSnapshot : ModelSnapshot
+    [Migration("20180201213106_AddedUserIdentity")]
+    partial class AddedUserIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

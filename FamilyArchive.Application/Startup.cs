@@ -5,9 +5,11 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Model;
     using Service;
 
     public class Startup
@@ -35,6 +37,8 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityFrameworkNpgsql().AddDbContext<FamilyArchiveContext>(x => x.UseNpgsql(ApplicationSettings.Database.ConnectionString));
+            services.AddIdentity<User, UserRole>()
+                .AddEntityFrameworkStores<FamilyArchiveContext>();
             services.AddScoped<IDbFactory, DbFactory>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPhraseRepository, PhraseRepository>();
@@ -42,8 +46,6 @@
             services.AddScoped<ApplicationSettings>();
             services.AddMvc();
         }
-
-
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -54,6 +56,7 @@
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseMvc();
             app.UseDefaultFiles();
             app.UseStaticFiles();

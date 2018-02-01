@@ -25,7 +25,7 @@
 
         public Task<Phrase> GetPhraseOrDefaultAsync(Guid guid)
         {
-            return DbSet.FirstOrDefaultAsync(x => x.Guid == guid);
+            return DbSet.FirstOrDefaultAsync(x => x.Id == guid);
         }
 
         public async Task<IEnumerable<Phrase>> GetAllPhrasesAsync()

@@ -4,7 +4,7 @@
 
     public interface IDbEntity
     {
-        Guid Guid { get; set; }
+        Guid Id { get; set; }
 
         DateTime Created { get; set; }
 

@@ -17,10 +17,5 @@
             optionsBuilder.UseNpgsql(_connectionString);
             return optionsBuilder.Options;
         }
-
-        //private static void OptionsAction(DbContextOptionsBuilder x, string connectionString)
-        //{
-        //    x.UseNpgsql();
-        //}
     }
 }

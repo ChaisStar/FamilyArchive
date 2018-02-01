@@ -2,7 +2,7 @@ export class Phrase {
     from: string;
     to: string;
     text: string;
-    guid: string;
+    id: string;
     created: Date;
     updated: Date;
 }

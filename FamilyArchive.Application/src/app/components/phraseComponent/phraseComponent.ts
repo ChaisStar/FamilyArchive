@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
         await this.getData();
     }
 
-    deleteItem =async (guid:string): Promise<void> => {
-        await this.phraseApiService.deletePhrase(guid);
+    deleteItem =async (id:string): Promise<void> => {
+        await this.phraseApiService.deletePhrase(id);
         await this.getData();
     }
 };
