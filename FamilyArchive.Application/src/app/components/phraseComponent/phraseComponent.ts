@@ -8,7 +8,7 @@ import { PhraseApiService } from "../../services/apiServices/phraseApiService";
     providers: [PhraseApiService]
 })
 export class AppComponent implements OnInit {
-    ngOnInit = (): Promise<void> => this.getData();
+    ngOnInit():void { this.getData(); }
 
     phrases: Phrase[] = [];
 
@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
         await this.getData();
     }
 
-    deleteItem =async (id:string): Promise<void> => {
+    deleteItem = async (id: string): Promise<void> => {
         await this.phraseApiService.deletePhrase(id);
         await this.getData();
     }
-};
+}
